@@ -1,0 +1,125 @@
+/* Mobile tweaks for screens between 300px and 500px
+   These rules load after Tailwind (see HTML) so they override utility classes where needed.
+   Goal: preserve desktop design while improving layout & touchability on small phones.
+*/
+
+@media (min-width: 300px) and (max-width: 500px) {
+
+  /* Make the main container use more of the viewport and reduce large fixed heights */
+  header, .main, .haqida {
+    width: 96% !important;
+    margin: 0.6rem auto !important;
+    padding-left: 0.25rem !important;
+    padding-right: 0.25rem !important;
+  }
+
+  /* Navigation: reduce height, allow wrapping and keep links reachable */
+  nav {
+    height: auto !important;
+    padding: 0.5rem 0.5rem !important;
+    gap: 0.4rem;
+  }
+
+  nav .right h1 {
+    font-size: 1.1rem !important; /* smaller site title */
+    line-height: 1.2 !important;
+  }
+
+  /* Make nav links wrap or become scrollable instead of overflowing */
+  nav .left {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+    justify-content: center !important;
+  }
+
+  nav .left a {
+    font-size: 0.95rem !important;
+    padding: 6px 8px !important;
+  }
+
+  /* Hero / main title size */
+  .main h1, .haqida h1 {
+    font-size: 1.4rem !important;
+    margin-top: 0.6rem !important;
+  }
+
+  /* Services grid: single column for narrow screens */
+  .services-container {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+    margin: 0.6rem !important;
+  }
+
+  .service-card {
+    padding: 0.8rem !important;
+    border-radius: 12px !important;
+  }
+
+  .service-card h3 { font-size: 1rem !important; }
+  .service-card p  { font-size: 0.95rem !important; }
+
+  /* About page: remove huge fixed heights, stack videos and images vertically */
+  .rasm, .rasm .video-content, .rasm .rasm-content {
+    height: auto !important;
+    min-height: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.6rem !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0.6rem !important;
+  }
+
+  /* Videos: full width but keep reasonable max width */
+  .video-content video {
+    width: 100% !important;
+    max-width: 420px !important;
+    height: auto !important;
+    border-radius: 12px !important;
+  }
+
+  /* Images in the gallery: stack and scale down */
+  .rasm-content img {
+    width: 90% !important; /* stack vertically and fill most of screen */
+    height: auto !important;
+    max-width: 420px !important;
+    margin: 0.5rem auto !important;
+    display: block !important;
+  }
+
+  /* Buttons and touch targets */
+  button, .btn {
+    padding: 0.6rem 0.9rem !important;
+    font-size: 1rem !important;
+    border-radius: 10px !important;
+  }
+
+  /* Reduce giant paddings/margins from utilities that assume desktop */
+  .mt-10 { margin-top: 0.8rem !important; }
+  .m-10  { margin: 0.6rem !important; }
+  .p-6  { padding: 0.6rem !important; }
+
+  /* Ensure text remains readable but doesn't overflow */
+  p, li, a {
+    line-height: 1.4 !important;
+    word-break: break-word !important;
+  }
+
+  /* Fix any wide elements (videos, iframes, tables) */
+  img, video, iframe, table {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Small typography adjustments for narrow screens */
+  body { font-size: 15px !important; }
+
+  /* Minor visual: rounded header corners slightly smaller */
+  nav, .main, .haqida { border-radius: 18px !important; }
+
+}
+
+/* End mobile rules */
