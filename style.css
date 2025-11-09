@@ -37,6 +37,9 @@
     font-size: 0.95rem !important;
     padding: 6px 8px !important;
   }
+   .main{
+      height:400px;
+   }
 
   /* Hero / main title size */
   .main h1, .haqida h1 {
@@ -121,5 +124,6 @@
   nav, .main, .haqida { border-radius: 18px !important; }
 
 }
+
 
 /* End mobile rules */
