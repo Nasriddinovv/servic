@@ -1,0 +1,29 @@
+@media (min-width: 300px) and (max-width: 500px) {
+    h1 {
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+header div .video-rasm {
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+
+}
+header div .video-rasm video {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+header div  button {
+    width: 70%;
+    height: auto;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+}
